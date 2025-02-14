@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: cooper black;
+   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGSceLVNwXuPoOi1maarGRKgH-SPcQKNsheg&s');
+    background-position: no-repeat;
+    background-size: cover;
+
+}
+.cube-container {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .cube {
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: rotateCube 20s infinite linear;
+  }
+
+  @keyframes rotateCube {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+
+  .cube:hover {
+    animation: rotateCubeHover 3s infinite linear;
+  }
+  @keyframes rotateCubeHover {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+      transform: rotateX(720deg) rotateY(720deg);
+    }
+  }
+
+  .cube-face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+   background-color: rgb(244, 137, 6);
+    color:black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 100px;
+  }
+
+  .front  { transform: translateZ(100px); }
+  .back   { transform: rotateY(180deg) translateZ(100px); }
+  .left   { transform: rotateY(-90deg) translateZ(100px); }
+  .right  { transform: rotateY(90deg) translateZ(100px); }
+  .top    { transform: rotateX(90deg) translateZ(100px); }
+  .bottom { transform: rotateX(-90deg) translateZ(100px); } 
